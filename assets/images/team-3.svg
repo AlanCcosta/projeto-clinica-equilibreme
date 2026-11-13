@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" fill="none">
+    <rect width="300" height="300" fill="#F4F6F3" rx="40" />
+    <circle cx="150" cy="130" r="64" fill="#364536" opacity="0.15" />
+    <circle cx="150" cy="130" r="58" stroke="#364536" stroke-width="2" />
+    <text x="150" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="700" fill="#364536" text-anchor="middle">
+      EQ
+    </text>
+    <text x="150" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#243024" text-anchor="middle">
+      Fisioterapeuta
+    </text>
+    <text x="150" y="258" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500" fill="#697769" text-anchor="middle">
+      Instrutora de Pilates Clínico & LPF
+    </text>
+  </svg>

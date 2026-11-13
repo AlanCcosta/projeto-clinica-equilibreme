@@ -1,0 +1,1771 @@
+/* ==========================================================================
+   CLÍNICA EQUILIBREME - PALETA OFICIAL DA LOGOMARCA
+   Vinho / Marsala (#762A28) + Azul Petróleo / Deep Navy (#15303E)
+   Identidade Clean, Sofisticada, Moderna e com Amplo Whitespace
+   ========================================================================== */
+
+:root {
+  /* Cores Extraídas Diretamente da Logomarca Oficial */
+  --wine-primary: #762A28;      /* Vinho / Marsala emblemático (enso circle & "CLÍNICA") */
+  --wine-dark: #581C1B;         /* Vinho profundo para hover e destaques ativos */
+  --wine-light: #943A38;        /* Vinho claro */
+  --wine-soft: #F9EFEF;         /* Tint suave de vinho para badges e fundos leves */
+  --wine-border: rgba(118, 42, 40, 0.22);
+
+  --navy-primary: #15303E;      /* Azul Petróleo / Deep Navy (do texto "EQUILIBREME") */
+  --navy-dark: #0C1B24;         /* Midnight Navy para footer e contraste máximo */
+  --navy-card: #1C3B4B;         /* Card elevado em tom azul petróleo */
+  --navy-hover: #0F2531;        /* Hover para botões e cards navy */
+  --navy-soft: #EEF4F8;         /* Tint suave gelo/slate para seções alternadas */
+  --navy-border: rgba(21, 48, 62, 0.16);
+
+  /* Superfícies & Whitespace */
+  --bg-canvas: #F8FAFC;         /* Fundo limpo, luminoso e contemporâneo */
+  --bg-pure: #FFFFFF;           /* Branco puro para cards, inputs e contrastes */
+  --bg-section-alt: #EFF4F8;    /* Fundo alternado em slate-ice sofisticado */
+
+  /* Tipografia */
+  --text-dark: #0E222D;         /* Títulos em azul petróleo ultra-escuro */
+  --text-body: #394E5B;         /* Texto corrido em ardósia suave e elegante */
+  --text-muted: #667B88;        /* Textos de apoio e legendas */
+  --text-light: #FFFFFF;        /* Texto branco para superfícies escuras */
+
+  /* Sombras & Acabamentos */
+  --shadow-sm: 0 2px 10px rgba(14, 34, 45, 0.05);
+  --shadow-md: 0 8px 26px rgba(14, 34, 45, 0.09);
+  --shadow-lg: 0 16px 40px rgba(14, 34, 45, 0.13);
+  --shadow-card: 0 12px 32px rgba(12, 27, 36, 0.20);
+
+  --radius-pill: 9999px;
+  --radius-card: 20px;
+  --radius-card-lg: 26px;
+  --radius-input: 14px;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.heading-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-dark);
+  line-height: 1.18;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: #C4D2DC;
+  border-radius: 9999px;
+  border: 2px solid var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wine-primary);
+}
+
+/* Container */
+.container-custom {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ==========================================================================
+   BUTTONS & PILLS (Com as Cores da Nova Identidade Visual)
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.85rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Botão Vinho / Marsala (Destaque Principal) */
+.btn-wine {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(118, 42, 40, 0.28);
+}
+
+.btn-wine:hover {
+  background-color: var(--wine-dark);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(118, 42, 40, 0.38);
+}
+
+/* Botão Azul Petróleo / Navy */
+.btn-navy {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(21, 48, 62, 0.25);
+}
+
+.btn-navy:hover {
+  background-color: var(--navy-hover);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(21, 48, 62, 0.35);
+}
+
+.btn-white {
+  background-color: #FFFFFF;
+  color: var(--navy-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-white:hover {
+  background-color: var(--navy-soft);
+  color: var(--wine-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-navy {
+  border: 1.5px solid var(--navy-primary);
+  color: var(--navy-primary);
+  background: transparent;
+}
+
+.btn-outline-navy:hover {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-wine {
+  border: 1.5px solid var(--wine-primary);
+  color: var(--wine-primary);
+  background: transparent;
+}
+
+.btn-outline-wine:hover {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   HEADER & FLOATING NAVIGATION (Com a Logo Oficial da Equilibreme)
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(248, 250, 252, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(21, 48, 62, 0.10);
+  transition: all var(--transition-fast);
+}
+
+.header-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+}
+
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-logo-img {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo-wrap:hover .brand-logo-img {
+  transform: scale(1.03);
+}
+
+.header-contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.phone-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  border: 1px solid rgba(21, 48, 62, 0.16);
+  box-shadow: var(--shadow-sm);
+}
+
+.phone-badge-pill:hover {
+  border-color: var(--wine-primary);
+  color: var(--wine-primary);
+}
+
+/* Sub-Bar: Pílula de Navegação inspirada na Referência, agora em Azul Petróleo */
+.sub-nav-wrapper {
+  padding-bottom: 0.75rem;
+}
+
+.nav-sand-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--navy-primary);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.5rem;
+  box-shadow: 0 4px 16px rgba(21, 48, 62, 0.28);
+}
+
+.nav-sand-pill ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-sand-pill a {
+  display: block;
+  padding: 0.45rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.nav-sand-pill a:hover,
+.nav-sand-pill a.active {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Mobile Menu Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  color: var(--navy-primary);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO SECTION (2 Colunas + 4 Cards Flutuantes em Azul Petróleo com Detalhe Vinho)
+   ========================================================================== */
+
+.hero-section {
+  padding: 2.5rem 0 3.5rem 0;
+  background-color: var(--bg-canvas);
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 2.75rem;
+}
+
+.hero-image-frame {
+  position: relative;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 16 / 11;
+  background-color: #E2EAF0;
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.hero-image-frame:hover img {
+  transform: scale(1.02);
+}
+
+.hero-badge-tag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background-color: rgba(21, 48, 62, 0.92);
+  color: #FFFFFF;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* 4 Cards Flutuantes (Inspirados na Referência, agora em Azul Petróleo com Borda Vinho) */
+.hero-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.olive-feature-card {
+  background-color: var(--navy-primary);
+  color: var(--text-light);
+  border-radius: var(--radius-card);
+  padding: 1.6rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 10px 24px rgba(12, 27, 36, 0.22);
+  transition: all var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+  overflow: hidden;
+}
+
+.olive-feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--wine-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.olive-feature-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--navy-card);
+  box-shadow: 0 16px 34px rgba(12, 27, 36, 0.32);
+}
+
+.olive-feature-card:hover::after {
+  opacity: 1;
+}
+
+.card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  color: #FFFFFF;
+}
+
+.olive-feature-card:hover .card-icon-wrap {
+  background-color: var(--wine-primary);
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   SOBRE A CLÍNICA
+   ========================================================================= */
+
+.about-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-canvas);
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wine-primary);
+  margin-bottom: 0.75rem;
+}
+
+.section-heading {
+  font-size: clamp(1.85rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading.text-white {
+  color: #FFFFFF;
+}
+
+.about-text {
+  font-size: 1.02rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.about-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.about-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--wine-soft);
+  color: var(--wine-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 800;
+}
+
+.about-image-wrap {
+  position: relative;
+}
+
+.about-image-card {
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 5;
+  background-color: #E2EAF0;
+}
+
+.about-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-floating-badge {
+  position: absolute;
+  bottom: -1.25rem;
+  left: -1.25rem;
+  background-color: #FFFFFF;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--navy-border);
+  max-width: 280px;
+}
+
+.badge-number {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--wine-primary);
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-body);
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   NOSSOS PROCEDIMENTOS (Fundo Slate / Azul Petróleo Suave & Card Dividido)
+   ========================================================================== */
+
+.procedures-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-section-alt);
+  position: relative;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-header-center .section-heading {
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle-dark {
+  color: var(--text-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* Category Quick Selector Pills */
+.procedure-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+}
+
+.proc-tab-btn {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background-color: #FFFFFF;
+  color: var(--navy-primary);
+  border: 1px solid rgba(21, 48, 62, 0.14);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.proc-tab-btn:hover {
+  background-color: var(--navy-soft);
+  color: var(--wine-primary);
+}
+
+.proc-tab-btn.active {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  border-color: var(--wine-primary);
+  box-shadow: 0 4px 14px rgba(118, 42, 40, 0.3);
+}
+
+/* Split Card (Foto à Esquerda + Card Navy/Vinho à Direita) */
+.procedure-showcase-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.procedure-split-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  width: 100%;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(21, 48, 62, 0.20);
+  background-color: #FFFFFF;
+  min-height: 440px;
+  transition: opacity 0.3s ease;
+}
+
+.proc-image-side {
+  position: relative;
+  overflow: hidden;
+  background-color: #DDE5EC;
+}
+
+.proc-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.procedure-split-card:hover .proc-image-side img {
+  transform: scale(1.03);
+}
+
+.proc-info-side {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.proc-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E28F8D;
+  margin-bottom: 0.75rem;
+}
+
+.proc-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.proc-description {
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.proc-benefits-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.proc-benefit-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+}
+
+/* Nav Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: var(--navy-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  transition: all var(--transition-fast);
+  z-index: 10;
+  border: 1px solid rgba(21, 48, 62, 0.12);
+}
+
+.slider-arrow:hover {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  border-color: var(--wine-primary);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slider-arrow.arrow-prev {
+  left: -23px;
+}
+
+.slider-arrow.arrow-next {
+  right: -23px;
+}
+
+.procedures-cta-wrap {
+  text-align: center;
+}
+
+/* ==========================================================================
+   DIFERENCIAIS DA CLÍNICA
+   ========================================================================== */
+
+.differentials-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-canvas);
+}
+
+.differentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.differential-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-card);
+  padding: 2.2rem 1.6rem;
+  border: 1px solid var(--navy-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.differential-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--wine-primary);
+}
+
+.diff-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--navy-soft);
+  color: var(--wine-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-smooth);
+}
+
+.differential-card:hover .diff-icon-box {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+}
+
+.diff-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+}
+
+.diff-desc {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   PROFISSIONAIS / CORPO CLÍNICO
+   ========================================================================== */
+
+/* ==========================================================================
+   CARROSSEL DE PROFISSIONAIS (Equipe Oficial da Clínica Equilibreme)
+   ========================================================================== */
+
+.team-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-section-alt);
+  position: relative;
+}
+
+.team-carousel-container {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.team-carousel-track-wrap {
+  overflow: hidden;
+  border-radius: var(--radius-card-lg);
+  padding: 0.5rem 0.25rem 1.25rem 0.25rem;
+}
+
+.team-carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.team-carousel-slide {
+  flex: 0 0 calc((100% - 3rem) / 3); /* 3 cards visíveis no desktop */
+  max-width: calc((100% - 3rem) / 3);
+  box-sizing: border-box;
+}
+
+.team-carousel-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--navy-border);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.team-carousel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--wine-primary);
+}
+
+.team-banner-wrap {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  position: relative;
+  overflow: hidden;
+  background-color: #E2EAF0;
+}
+
+.team-banner-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.team-carousel-card:hover .team-banner-wrap img {
+  transform: scale(1.02);
+}
+
+.team-action-bar {
+  padding: 1.15rem 1.25rem;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid rgba(21, 48, 62, 0.08);
+}
+
+/* Setas de navegação do carrossel */
+.team-nav-arrow {
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: var(--navy-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(12, 27, 36, 0.18);
+  transition: all var(--transition-fast);
+  z-index: 10;
+  border: 1.5px solid rgba(21, 48, 62, 0.14);
+}
+
+.team-nav-arrow:hover {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  border-color: var(--wine-primary);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 8px 24px rgba(118, 42, 40, 0.35);
+}
+
+.team-nav-arrow.arrow-prev {
+  left: -24px;
+}
+
+.team-nav-arrow.arrow-next {
+  right: -24px;
+}
+
+/* Indicadores / Dots */
+.team-dots-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.team-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(21, 48, 62, 0.22);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.team-dot.active {
+  width: 28px;
+  border-radius: 9999px;
+  background-color: var(--wine-primary);
+  box-shadow: 0 2px 8px rgba(118, 42, 40, 0.35);
+}
+
+/* ==========================================================================
+   DEPOIMENTOS (Pure White com 3 Cards em Azul Petróleo)
+   ========================================================================== */
+
+.testimonials-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-pure);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.testimonial-olive-card {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-card);
+  padding: 2.2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 24px rgba(21, 48, 62, 0.16);
+  transition: all var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.testimonial-olive-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--navy-card);
+  box-shadow: 0 16px 32px rgba(21, 48, 62, 0.28);
+}
+
+.stars-row {
+  display: flex;
+  gap: 0.25rem;
+  color: #F5A623;
+  margin-bottom: 1.25rem;
+}
+
+.quote-text {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 1.75rem;
+}
+
+.patient-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.patient-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--wine-primary);
+}
+
+.patient-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.patient-treatment {
+  font-size: 0.8rem;
+  color: #E28F8D;
+}
+
+.testimonials-cta-wrap {
+  text-align: center;
+}
+
+/* ==========================================================================
+   FINAL CTA BANNER
+   ========================================================================== */
+
+.final-cta-section {
+  padding: 5rem 0;
+  background-color: var(--bg-canvas);
+}
+
+.final-cta-box {
+  background: linear-gradient(135deg, var(--navy-primary) 0%, #3B1413 100%);
+  border-radius: var(--radius-card-lg);
+  padding: 4rem 2.5rem;
+  text-align: center;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(21, 48, 62, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.final-cta-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(118, 42, 40, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 650px;
+  margin: 0 auto 2.25rem auto;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   FALE CONOSCO / CONTATO & MAPA
+   ========================================================================== */
+
+.contact-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-section-alt);
+  position: relative;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Card Esquerdo: Mapa & Informações */
+.contact-map-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(21, 48, 62, 0.14);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--navy-border);
+}
+
+.map-embed-wrap {
+  width: 100%;
+  height: 260px;
+  background-color: #E2EAF0;
+  position: relative;
+}
+
+.map-embed-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contact-info-content {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.info-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: var(--navy-soft);
+  color: var(--wine-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-text-group h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.info-text-group p {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* Card Direito: Formulário Azul Petróleo com Botão Vinho */
+.contact-form-card {
+  background-color: var(--navy-primary);
+  border-radius: var(--radius-card-lg);
+  padding: 2.5rem;
+  color: #FFFFFF;
+  box-shadow: 0 15px 35px rgba(12, 27, 36, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.4rem;
+}
+
+.form-subtitle {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.75rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem 1.15rem;
+  border-radius: var(--radius-input);
+  background-color: #FFFFFF;
+  color: var(--text-dark);
+  font-size: 0.92rem;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.form-input::placeholder {
+  color: #8C9EA8;
+}
+
+.form-input:focus {
+  border-color: var(--wine-primary);
+  box-shadow: 0 0 0 3px rgba(118, 42, 40, 0.35);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 95px;
+}
+
+.btn-form-submit {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: var(--radius-input);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 14px rgba(118, 42, 40, 0.35);
+}
+
+.btn-form-submit:hover {
+  background-color: var(--wine-dark);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   PERGUNTAS FREQUENTES (FAQ)
+   ========================================================================== */
+
+.faq-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-canvas);
+}
+
+.faq-accordion-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid var(--navy-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.faq-item:hover {
+  border-color: var(--wine-primary);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.35rem 1.5rem;
+  text-align: left;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wine-primary);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.5rem;
+  font-size: 0.94rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 0 1.5rem 1.35rem 1.5rem;
+}
+
+/* ==========================================================================
+   FOOTER (Midnight Navy #0C1B24)
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--navy-dark);
+  color: #DDE5EC;
+  padding: 5rem 0 2rem 0;
+  border-top: 2px solid var(--wine-primary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-brand p {
+  font-size: 0.92rem;
+  color: #9BB0BE;
+  line-height: 1.7;
+  margin-top: 1.25rem;
+  max-width: 340px;
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #A6BCCB;
+  transition: all var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: #E28F8D;
+  padding-left: 4px;
+}
+
+.social-links-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.social-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.social-icon-btn:hover {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.footer-bottom-bar {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: #7A93A4;
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP & MODAL
+   ========================================================================== */
+
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.whatsapp-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: pulseEffect 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes pulseEffect {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.whatsapp-popover {
+  position: fixed;
+  bottom: 6.5rem;
+  right: 2rem;
+  width: 310px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  z-index: 998;
+  padding: 1.25rem;
+  border: 1px solid var(--navy-border);
+  display: none;
+  animation: popIn 0.3s ease forwards;
+}
+
+.whatsapp-popover.active {
+  display: block;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.popover-doctor-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.popover-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--navy-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wine-primary);
+}
+
+.popover-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.popover-bubble {
+  background-color: var(--navy-soft);
+  border-radius: 12px;
+  padding: 0.85rem;
+  font-size: 0.86rem;
+  color: var(--text-dark);
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(12, 27, 36, 0.68);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius-card-lg);
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  animation: modalScale 0.3s ease;
+}
+
+@keyframes modalScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--navy-soft);
+  color: var(--navy-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+}
+
+/* Mobile Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background-color: #FFFFFF;
+  z-index: 1001;
+  padding: 2rem 1.5rem;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: transform var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-drawer.active {
+  transform: translateX(0);
+}
+
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: none;
+}
+
+.mobile-drawer-overlay.active {
+  display: block;
+}
+
+/* Toast Message */
+.toast-notice {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  z-index: 1100;
+  font-size: 0.92rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  border-left: 4px solid var(--wine-primary);
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .differentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .team-carousel-slide {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+    max-width: calc((100% - 1.5rem) / 2);
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sub-nav-wrapper {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .phone-badge-pill {
+    display: none;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-floating-badge {
+    position: static;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+  .procedure-split-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .proc-image-side {
+    height: 240px;
+  }
+  .proc-info-side {
+    padding: 2rem 1.5rem;
+  }
+  .slider-arrow {
+    display: none;
+  }
+  .hero-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .differentials-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-carousel-slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .team-nav-arrow {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .whatsapp-popover {
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+  }
+}

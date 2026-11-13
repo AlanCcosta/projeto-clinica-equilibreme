@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 185" width="360" height="185" fill="none">
+  <defs>
+    <!-- Import classical elegant serif & modern geometric sans fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&amp;family=Plus+Jakarta+Sans:wght@700&amp;display=swap');
+      
+      .brand-clinica {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 19.5px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        fill: #762A28;
+      }
+      
+      .brand-equilibreme {
+        font-family: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+        font-size: 37px;
+        font-weight: 700;
+        letter-spacing: 0.045em;
+        fill: #15303E;
+      }
+    </style>
+  </defs>
+
+  <!-- =====================================================================
+       ENSO CIRCLE & CALLIGRAPHIC "e" FLOURISH EMBLEM
+       Coordinates mathematically aligned to the brand emblem
+       ===================================================================== -->
+  <g transform="translate(-45, -100)">
+    <!-- Subtle glow ring -->
+    <circle cx="225" cy="168" r="54" stroke="rgba(118,42,40,0.12)" stroke-width="4" fill="none" />
+
+    <!-- Outer Ensô Brush Ring (Burgundy / Marsala) -->
+    <!-- Top arc (thick, tapered sweep) -->
+    <path d="M 174 160 
+             C 174 133, 192 113, 225 113 
+             C 256 113, 276 132, 278 158 
+             C 278 162, 273 162, 271 157 
+             C 268 137, 250 122, 224 122 
+             C 198 122, 183 138, 182 160 
+             Z" 
+          fill="#762A28" />
+
+    <!-- Bottom arc (thick, textured sweep) -->
+    <path d="M 276 172 
+             C 274 200, 253 222, 224 222 
+             C 194 222, 175 202, 174 175 
+             C 174 170, 180 170, 181 175 
+             C 183 196, 199 213, 224 213 
+             C 249 213, 267 195, 268 172 
+             Z" 
+          fill="#762A28" />
+
+    <!-- Secondary dynamic brush accents giving the authentic Enso organic texture -->
+    <path d="M 183 138 C 172 153, 172 178, 181 195 C 182 198, 178 200, 176 197 C 167 180, 167 154, 178 136 C 180 133, 184 135, 183 138 Z" fill="#762A28" opacity="0.85" />
+    <path d="M 268 142 C 277 156, 278 180, 269 198 C 268 201, 272 203, 274 200 C 284 182, 283 155, 273 139 C 271 136, 267 138, 268 142 Z" fill="#762A28" opacity="0.85" />
+
+    <!-- ===================================================================
+         CENTRAL CALLIGRAPHIC "e" FLOURISH
+         Left wing sweep -> central cursive loop -> right wing sweep
+         =================================================================== -->
+    <path d="M 103 169
+             C 125 174, 148 184, 175 186
+             C 192 187, 204 182, 212 171
+             C 219 160, 229 146, 237 149
+             C 244 152, 241 163, 234 172
+             C 225 183, 212 189, 202 189
+             C 190 189, 185 184, 187 181
+             C 189 178, 196 179, 203 182
+             C 212 186, 226 182, 234 173
+             C 240 166, 242 158, 238 156
+             C 233 154, 224 164, 218 173
+             C 210 186, 195 192, 175 190
+             C 147 188, 125 178, 103 173
+             Z"
+          fill="#762A28" />
+
+    <!-- Right-hand swooping flourish -->
+    <path d="M 230 184
+             C 252 187, 273 184, 292 178
+             C 310 173, 328 174, 345 181
+             C 347 182, 348 185, 346 187
+             C 344 189, 341 188, 339 187
+             C 324 179, 308 178, 291 183
+             C 272 189, 250 193, 228 190
+             Z"
+          fill="#762A28" />
+  </g>
+
+  <!-- =====================================================================
+       TYPOGRAPHY
+       1. "CLÍNICA" (Burgundy / Marsala, all-caps, modern sans-serif)
+       2. "EQUILIBREME" (Deep Navy Blue, all-caps, classical luxury serif)
+       ===================================================================== -->
+  <text x="6" y="131" class="brand-clinica">CLÍNICA</text>
+  <text x="4" y="174" class="brand-equilibreme">EQUILIBREME</text>
+</svg>

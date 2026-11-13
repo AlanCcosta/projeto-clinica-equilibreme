@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" fill="none">
+    <defs>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#F8FAFC" />
+        <stop offset="50%" stop-color="#EFF4F8" />
+        <stop offset="100%" stop-color="#E2EAF0" />
+      </linearGradient>
+      <linearGradient id="burgundyGlow" x1="0%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" stop-color="#762A28" stop-opacity="0.22" />
+        <stop offset="100%" stop-color="#762A28" stop-opacity="0" />
+      </linearGradient>
+      <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#15303E" stroke-width="0.75" opacity="0.08" />
+      </pattern>
+    </defs>
+
+    <!-- Refined Slate-Ice background -->
+    <rect width="800" height="600" fill="url(#bgGrad)" />
+    <rect width="800" height="600" fill="url(#gridPattern)" />
+    
+    <!-- Burgundy and Navy lighting glows -->
+    <circle cx="640" cy="120" r="320" fill="url(#burgundyGlow)" />
+    <circle cx="120" cy="510" r="280" fill="#15303E" opacity="0.08" />
+
+    <!-- Architectural Clinical Lines -->
+    <g opacity="0.3" stroke="#762A28" stroke-width="1.2">
+      <line x1="60" y1="0" x2="60" y2="600" stroke-dasharray="4 8" />
+      <line x1="85" y1="0" x2="85" y2="600" stroke-dasharray="4 8" />
+      <line x1="110" y1="0" x2="110" y2="600" stroke-dasharray="4 8" />
+    </g>
+
+    <!-- Central Feature Card -->
+    <g transform="translate(210, 150)">
+      <rect x="0" y="0" width="380" height="300" rx="28" fill="#FFFFFF" filter="drop-shadow(0 20px 35px rgba(21, 48, 62, 0.10))" />
+      <rect x="12" y="12" width="356" height="276" rx="20" fill="#FAFBFD" stroke="#DCE5ED" stroke-width="1.5" />
+      
+      <!-- Category Tag (Burgundy) -->
+      <rect x="36" y="36" width="140" height="28" rx="14" fill="#762A28" />
+      <text x="106" y="54" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" letter-spacing="1.5" text-anchor="middle">
+        LAGOA NOVA - NATAL/RN
+      </text>
+
+      <!-- Center Icon & Enso Circle Graphic -->
+      <g transform="translate(190, 130)">
+        <circle cx="0" cy="0" r="48" fill="#FBF6F6" stroke="#762A28" stroke-width="2" stroke-dasharray="2 3" />
+        <circle cx="0" cy="0" r="42" stroke="#15303E" stroke-width="1.5" />
+        <g transform="translate(-24, -24)" stroke="#762A28" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v20M2 12h20M7 7l10 10M17 7L7 17"/>
+        </g>
+      </g>
+
+      <!-- Title & Subtitle inside graphic -->
+      <text x="190" y="215" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#0E222D" text-anchor="middle">
+        Clínica & Fisioterapia
+      </text>
+      <text x="190" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500" fill="#4B6373" text-anchor="middle">
+        Ambiente acolhedor, moderno e iluminado
+      </text>
+    </g>
+
+    <!-- Clinic Seal -->
+    <g transform="translate(635, 535)">
+      <circle cx="20" cy="20" r="18" fill="#762A28" opacity="0.15" />
+      <circle cx="20" cy="20" r="14" stroke="#762A28" stroke-width="1.2" />
+      <text x="48" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#15303E" letter-spacing="1.5">
+        EQUILIBREME
+      </text>
+    </g>
+  </svg>
