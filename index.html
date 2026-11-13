@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=3.3">
 
   <!-- Structured Data JSON-LD for Local Healthcare Business -->
   <script type="application/ld+json">
@@ -133,7 +133,7 @@
             <li><a href="#inicio" class="nav-link active">Início</a></li>
             <li><a href="#sobre" class="nav-link">Quem somos</a></li>
             <li><a href="#procedimentos" class="nav-link">Procedimentos</a></li>
-            <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+            <li><a href="#marcos-castro" class="nav-link">Dr. Marcos Castro</a></li>
             <li><a href="#profissionais" class="nav-link">Profissionais</a></li>
             <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
             <li><a href="#contato" class="nav-link">Contato</a></li>
@@ -181,7 +181,7 @@
       <li><a href="#inicio" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--wine-primary);">Início</a></li>
       <li><a href="#sobre" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--navy-primary);">Quem somos</a></li>
       <li><a href="#procedimentos" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--navy-primary);">Procedimentos</a></li>
-      <li><a href="#diferenciais" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--navy-primary);">Diferenciais</a></li>
+      <li><a href="#marcos-castro" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--navy-primary);">Dr. Marcos Castro</a></li>
       <li><a href="#profissionais" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--navy-primary);">Profissionais</a></li>
       <li><a href="#depoimentos" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--navy-primary);">Depoimentos</a></li>
       <li><a href="#contato" class="mobile-nav-link" style="font-size: 1.1rem; font-weight: 700; color: var(--navy-primary);">Contato &amp; Localização</a></li>
@@ -197,43 +197,47 @@
   </aside>
 
   <!-- =========================================================================
-       2. HERO SECTION (2 Colunas + 4 Cards Flutuantes em Azul Petróleo)
+       2. HERO SECTION (Full-Bleed Imersivo: Foto de Ponta a Ponta com Textos Sobrepostos)
        ========================================================================= -->
-  <section class="hero-section" id="inicio">
-    <div class="container-custom">
-      <div class="hero-grid">
-        <!-- Left Column: High-End Clinic Environment (Studio de Pilates Oficial) -->
-        <div class="hero-image-frame">
-          <img src="assets/images/studio-pilates-equilibreme.jpg" 
-               alt="Studio de Pilates Clínico e Reabilitação da Clínica Equilibreme" 
-               onerror="this.onerror=null; this.src='assets/images/hero-clinic.svg';">
-        </div>
+  <section class="hero-section hero-fullbleed" id="inicio">
+    <!-- Imagem de Fundo de Ponta a Ponta em Alta Resolução -->
+    <div class="hero-bg-wrapper">
+      <img src="assets/images/studio-pilates-equilibreme-hd.jpg" 
+           alt="Studio de Pilates Clínico e Reabilitação da Clínica Equilibreme" 
+           class="hero-full-bg"
+           onerror="this.onerror=null; this.src='assets/images/studio-pilates-equilibreme.jpg';">
+      <div class="hero-full-overlay"></div>
+    </div>
 
-        <!-- Right Column: Title & Action CTAs -->
-        <div class="hero-content">
-          <span class="section-label">SAÚDE • MOVIMENTO • EQUILÍBRIO</span>
-          <h1 class="hero-title">
-            Cuidar da sua saúde é investir na sua qualidade de vida.
-          </h1>
-          <p class="hero-subtitle">
-            Na Clínica Equilibreme, conectamos conhecimento científico de ponta, acolhimento genuíno e tecnologia terapêutica para devolver o equilíbrio natural ao seu corpo. Da fisioterapia avançada ao pilates personalizado e cuidados médicos, criamos um protocolo sob medida para sua vitalidade e bem-estar.
-          </p>
-          <div class="hero-ctas">
-            <a href="https://wa.me/5584999042632?text=Olá!%20Gostaria%20de%20agendar%20minha%20consulta%20na%20Clínica%20Equilibreme." 
-               target="_blank" rel="noopener noreferrer" class="btn btn-wine" data-open-modal="booking">
-              <span>Agende sua Consulta</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a href="#sobre" class="btn btn-outline-navy">
-              Conheça a Clínica
-            </a>
-          </div>
+    <!-- Conteúdo Textual Sobreposto -->
+    <div class="container-custom hero-inner-container">
+      <div class="hero-over-content">
+        <span class="hero-over-label">SAÚDE • MOVIMENTO • EQUILÍBRIO</span>
+        <h1 class="hero-over-title">
+          Cuidar da sua saúde é investir na sua qualidade de vida.
+        </h1>
+        <p class="hero-over-subtitle">
+          Na Clínica Equilibreme, conectamos conhecimento científico de ponta, acolhimento genuíno e tecnologia terapêutica para devolver o equilíbrio natural ao seu corpo. Da fisioterapia avançada ao pilates personalizado e cuidados médicos, criamos um protocolo sob medida para sua vitalidade e bem-estar.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/5584999042632?text=Olá!%20Gostaria%20de%20agendar%20minha%20consulta%20na%20Clínica%20Equilibreme." 
+             target="_blank" rel="noopener noreferrer" class="btn btn-hero-pill" data-open-modal="booking">
+            <span>Agende sua Consulta</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#sobre" class="btn btn-hero-outline">
+            Conheça a Clínica
+          </a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- 4 Floating Feature Cards (Inspirados na Referência, em Azul Petróleo) -->
+  <!-- 4 Cards Flutuantes de Destaque (Abaixo do Hero) -->
+  <section class="hero-features-bar">
+    <div class="container-custom">
       <div class="hero-features-grid">
         <!-- Card 1: Localização -->
         <div class="olive-feature-card">
@@ -326,6 +330,10 @@
             <li>
               <span class="check-icon">✓</span>
               <span>Studio de Pilates com no máximo 2 a 3 alunos por fisioterapeuta</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Credenciada <strong>Wellhub</strong> (a partir do plano <strong>Silver+</strong>)</span>
             </li>
             <li>
               <span class="check-icon">✓</span>
@@ -435,74 +443,124 @@
   </section>
 
   <!-- =========================================================================
-       5. DIFERENCIAIS DA CLÍNICA
+       5. DESTAQUE MÉDICO: DR. MARCOS CASTRO (Otorrino & Cirurgia Facial)
        ========================================================================= -->
-  <section class="differentials-section" id="diferenciais">
+  <section class="doctor-spotlight-section" id="marcos-castro">
+    <!-- Âncora invisível para compatibilidade com links antigos -->
+    <span id="diferenciais" style="display: block; position: relative; top: -90px; visibility: hidden;"></span>
+
     <div class="container-custom">
       <div class="section-header-center">
-        <span class="section-label">POR QUE ESCOLHER A EQUILIBREME?</span>
-        <h2 class="section-heading">Cuidado que transforma sua saúde com excelência.</h2>
-        <p style="color: var(--text-body); font-size: 1.05rem;">
-          Conheça os pilares que tornam nossa clínica referência em atendimento e bem-estar na capital potiguar.
+        <span class="section-label">MEDICINA ESPECIALIZADA &amp; CIRURGIA FACIAL</span>
+        <h2 class="section-heading">Dr. Marcos Castro</h2>
+        <p class="section-subtitle-dark">
+          Referência em Otorrinolaringologia e Cirurgia Plástica Facial em Natal/RN, unindo precisão anatômica, saúde respiratória e harmonia estética.
         </p>
       </div>
 
-      <div class="differentials-grid">
-        <!-- Diferencial 1 -->
-        <div class="differential-card">
-          <div class="diff-icon-box">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
+      <div class="doctor-spotlight-grid">
+        <!-- Coluna da Esquerda: Galeria de Fotos Autênticas -->
+        <div class="doctor-media-gallery">
+          <!-- Foto Principal (Consultório) -->
+          <div class="doctor-main-card">
+            <img src="assets/images/dr-marcos-castro-consultorio.jpg" 
+                 alt="Dr. Marcos Castro - Médico Otorrinolaringologista e Cirurgião Plástico Facial na Clínica Equilibreme" 
+                 class="doctor-main-photo">
+            <div class="doctor-credential-badge">
+              <span class="doc-badge-title">Dr. Marcos Castro</span>
+              <span class="doc-badge-crm">CRM-RN 6168 • RQE 1972</span>
+            </div>
           </div>
-          <h3 class="diff-title">Pontualidade &amp; Respeito</h3>
-          <p class="diff-desc">
-            Sua agenda é valiosa. Nossos atendimentos são pontuais, com agendamentos precisos e sem salas de espera cheias.
-          </p>
+
+          <!-- Fotos Secundárias (Cirurgia em Bloco & Resultado de Perfil) -->
+          <div class="doctor-sub-grid">
+            <div class="doctor-sub-card">
+              <img src="assets/images/dr-marcos-castro-cirurgia.jpg" 
+                   alt="Dr. Marcos Castro em procedimento de rinoplastia com instrumentos de medição milimétrica" 
+                   class="doctor-sub-photo">
+              <span class="doctor-sub-caption">Precisão Cirúrgica</span>
+            </div>
+            <div class="doctor-sub-card">
+              <img src="assets/images/dr-marcos-castro-resultado.jpg" 
+                   alt="Resultado de perfil de rinoplastia estética e funcional pelo Dr. Marcos Castro" 
+                   class="doctor-sub-photo">
+              <span class="doctor-sub-caption">Rinoplastia &amp; Função</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Diferencial 2 -->
-        <div class="differential-card">
-          <div class="diff-icon-box">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
+        <!-- Coluna da Direita: Biografia, Credenciais e Sociedades -->
+        <div class="doctor-content-col">
+          <div class="doctor-status-pill">
+            <span class="status-pulse-dot"></span>
+            <span>Corpo Clínico Equilibreme</span>
           </div>
-          <h3 class="diff-title">Atendimento Humanizado</h3>
-          <p class="diff-desc">
-            Ouvimos você atentamente. Analisamos seu estilo de vida, rotina e histórico para propor o melhor caminho terapêutico.
-          </p>
-        </div>
 
-        <!-- Diferencial 3 -->
-        <div class="differential-card">
-          <div class="diff-icon-box">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-          </div>
-          <h3 class="diff-title">Studio Exclusivo</h3>
-          <p class="diff-desc">
-            No Pilates e LPF, trabalhamos com turmas estritamente reduzidas, assegurando supervisão direta em cada movimento.
-          </p>
-        </div>
+          <h3 class="doctor-title-highlight">
+            Equilíbrio perfeito entre harmonia facial e respiração plena.
+          </h3>
 
-        <!-- Diferencial 4 -->
-        <div class="differential-card">
-          <div class="diff-icon-box">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <h3 class="diff-title">Emissão de Recibo</h3>
-          <p class="diff-desc">
-            Emitimos recibos e laudos completos para que você possa solicitar o reembolso facilitado junto ao seu plano de saúde.
+          <p class="doctor-bio-text">
+            O <strong>Dr. Marcos Castro (CRM-RN 6168 / RQE 1972)</strong> é médico renomado com ampla trajetória e destaque em Otorrinolaringologia e Cirurgia Plástica Facial. Sua atuação alia o mais rigoroso conhecimento anatômico cirúrgico à busca pela proporção estética refinada e natural.
           </p>
+
+          <p class="doctor-bio-text">
+            Com atendimento humanizado e planejamento individualizado, dedica-se ao diagnóstico e tratamento de patologias nasossinusais e respiratórias, bem como à realização de <strong>rinoplastias estruturadas e preservadoras</strong> que proporcionam resultados elegantes e ganho expressivo de qualidade de vida.
+          </p>
+
+          <!-- Badges de Sociedades Médicas Oficiais -->
+          <div class="doctor-societies-list">
+            <div class="society-badge-item">
+              <div class="society-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="society-text-wrap">
+                <strong>Sociedade Brasileira de Rinoplastia</strong>
+                <span>Membro Especialista (SBR)</span>
+              </div>
+            </div>
+
+            <div class="society-badge-item">
+              <div class="society-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div class="society-text-wrap">
+                <strong>Academia Bras. de Cirurgia Plástica Facial</strong>
+                <span>Membro Especialista (ABCPF)</span>
+              </div>
+            </div>
+
+            <div class="society-badge-item">
+              <div class="society-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </div>
+              <div class="society-text-wrap">
+                <strong>Otorrinolaringologia Clínica &amp; Cirúrgica</strong>
+                <span>Tratamento de desvio de septo, rinites, sinusites e ronco</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTAs de Agendamento com Dr. Marcos -->
+          <div class="doctor-actions-row">
+            <a href="https://wa.me/5584999042632?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Marcos%20Castro%20na%20Cl%C3%ADnica%20Equilibreme." 
+               target="_blank" rel="noopener noreferrer" class="btn btn-wine">
+              <span>Agendar Consulta com Dr. Marcos</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#procedimentos" class="btn btn-outline-navy">
+              Conhecer Procedimentos
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -903,12 +961,12 @@
         <!-- FAQ 2 -->
         <div class="faq-item">
           <button type="button" class="faq-question">
-            <span>A clínica aceita planos de saúde ou convênios?</span>
+            <span>A clínica aceita planos de saúde ou Wellhub?</span>
             <div class="faq-icon">▼</div>
           </button>
           <div class="faq-answer">
             <p>
-              Nossos atendimentos são particulares, o que nos permite dedicar tempo exclusivo e personalizado a cada paciente. No entanto, fornecemos recibos e relatórios detalhados com CRM/CREFITO para que você possa solicitar o reembolso integral ou parcial junto ao seu plano de saúde.
+              <strong>Sim!</strong> A Clínica Equilibreme recebe <strong>Wellhub a partir do plano Silver+</strong> para as atividades elegíveis (como o nosso Studio de Pilates e treinos funcionais). Para os atendimentos clínicos e consultas médicas especializadas, trabalhamos no formato particular e emitimos recibos e laudos completos com CRM/CREFITO para que você solicite o reembolso facilitado junto ao seu plano de saúde.
             </p>
           </div>
         </div>
@@ -993,7 +1051,7 @@
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">Quem somos</a></li>
             <li><a href="#procedimentos">Procedimentos</a></li>
-            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#marcos-castro">Dr. Marcos Castro</a></li>
             <li><a href="#profissionais">Profissionais</a></li>
             <li><a href="#depoimentos">Depoimentos</a></li>
             <li><a href="#contato">Contato &amp; Localização</a></li>
@@ -1150,6 +1208,6 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.0"></script>
 </body>
 </html>

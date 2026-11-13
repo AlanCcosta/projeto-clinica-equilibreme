@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Movimento Consciente & Postura',
       title: 'Pilates Clínico Personalizado',
       description: 'Nosso Studio de Pilates em Natal combina aparelhos modernos e turmas exclusivas de até 2 ou 3 alunos por fisioterapeuta especializado. Desenvolva tônus muscular, alinhamento postural, flexibilidade e estabilidade do core sem sobrecarga articular.',
-      benefits: ['Acompanhamento de fisioterapeuta', 'Aparelhos ergonômicos de alta precisão', 'Máximo de 2 a 3 alunos por horário', 'Para todas as idades e objetivos'],
-      imageOnline: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80',
-      imageFallback: 'assets/images/proc-pilates.svg'
+      benefits: ['Acompanhamento de fisioterapeuta', 'Aparelhos ergonômicos de ponta', 'Aceitamos Wellhub (Plano Silver+)', 'Máximo de 2 a 3 alunos por horário'],
+      imageOnline: 'assets/images/proc-pilates-equilibreme-hd.jpg',
+      imageFallback: 'assets/images/proc-pilates-equilibreme.jpg'
     },
     {
       id: 'lpf',

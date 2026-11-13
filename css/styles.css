@@ -482,107 +482,198 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   HERO SECTION (2 Colunas + 4 Cards Flutuantes em Azul Petróleo com Detalhe Vinho)
+   HERO SECTION (Full-Bleed Imersivo: Foto de Ponta a Ponta com Textos Sobrepostos)
    ========================================================================== */
 
-.hero-section {
-  padding: 2.5rem 0 3.5rem 0;
-  background-color: var(--bg-canvas);
+.hero-fullbleed {
   position: relative;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 3rem;
+  width: 100%;
+  min-height: 620px;
+  display: flex;
   align-items: center;
-  margin-bottom: 2.75rem;
-}
-
-.hero-image-frame {
-  position: relative;
-  border-radius: var(--radius-card-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  aspect-ratio: 16 / 11;
-  background-color: #E2EAF0;
+  background-color: #0C1B24;
 }
 
-.hero-image-frame img {
+.hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-full-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.hero-image-frame:hover img {
+  object-position: right center;
+  display: block;
   transform: scale(1.02);
+  transition: transform 10s ease-out;
+  image-rendering: auto;
 }
 
-.hero-badge-tag {
+.hero-fullbleed:hover .hero-full-bg {
+  transform: scale(1.05);
+}
+
+/* Gradiente imersivo que preserva as cores da clínica (Azul Petróleo e Vinho) e legibilidade total */
+.hero-full-overlay {
   position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  background-color: rgba(21, 48, 62, 0.92);
-  color: #FFFFFF;
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.78rem;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 27, 36, 0.95) 0%,
+    rgba(12, 27, 36, 0.88) 36%,
+    rgba(21, 48, 62, 0.65) 60%,
+    rgba(21, 48, 62, 0.28) 85%,
+    rgba(12, 27, 36, 0.38) 100%
+  );
+  z-index: 2;
+}
+
+.hero-full-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 36, 47, 0.35) 0%,
+    transparent 35%,
+    rgba(12, 27, 36, 0.65) 100%
+  );
+}
+
+.hero-inner-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.hero-over-content {
+  max-width: 680px;
+}
+
+.hero-over-label {
+  display: inline-block;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.16em;
+  color: #E28F8D;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 1.15rem;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-title {
-  font-size: clamp(2rem, 3.8vw, 3.25rem);
+.hero-over-title {
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
   font-weight: 800;
   line-height: 1.15;
-  color: var(--text-dark);
-  margin-bottom: 1.25rem;
+  color: #FFFFFF;
+  margin-bottom: 1.35rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
 }
 
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-body);
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  max-width: 540px;
+.hero-over-subtitle {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 2.25rem;
+  max-width: 620px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
 .hero-ctas {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
-/* 4 Cards Flutuantes (Inspirados na Referência, agora em Azul Petróleo com Borda Vinho) */
+/* Botões do Hero */
+.btn-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: #FFFFFF;
+  color: var(--navy-primary);
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-fast);
+  border: 2px solid #FFFFFF;
+}
+
+.btn-hero-pill:hover {
+  background-color: var(--wine-primary);
+  border-color: var(--wine-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(118, 42, 40, 0.45);
+}
+
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-outline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Barra dos 4 Cards Flutuantes (Abaixo do Hero) */
+.hero-features-bar {
+  background-color: var(--bg-canvas);
+  padding: 3.5rem 0 1.5rem 0; /* Respiro amplo entre a imagem e os blocos */
+  position: relative;
+  z-index: 10;
+}
+
+.hero-features-bar .hero-features-grid {
+  margin-top: 0; /* Descolado da imagem acima, idêntico à experiência perfeita do celular */
+  margin-bottom: 0;
+}
+
+/* 4 Cards Flutuantes (Inspirados na Referência, em Azul Petróleo) */
 .hero-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  margin-top: 1.5rem;
+  gap: 1.35rem;
 }
 
 .olive-feature-card {
   background-color: var(--navy-primary);
   color: var(--text-light);
   border-radius: var(--radius-card);
-  padding: 1.6rem 1.3rem;
+  padding: 1.75rem 1.4rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: 0 10px 24px rgba(12, 27, 36, 0.22);
+  box-shadow: 0 14px 34px rgba(12, 27, 36, 0.22);
   transition: all var(--transition-smooth);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
 }
@@ -643,7 +734,7 @@ button, input, textarea, select {
    ========================================================================= */
 
 .about-section {
-  padding: 5.5rem 0;
+  padding: 3.5rem 0 5.5rem 0; /* Top equilibrado em ~56px para harmonizar com a barra de cards */
   background-color: var(--bg-canvas);
   position: relative;
 }
@@ -950,7 +1041,243 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   DIFERENCIAIS DA CLÍNICA
+   DESTAQUE MÉDICO: DR. MARCOS CASTRO (Otorrino & Cirurgia Plástica Facial)
+   ========================================================================== */
+
+.doctor-spotlight-section {
+  padding: 5.5rem 0;
+  background-color: var(--bg-canvas);
+  position: relative;
+}
+
+.doctor-spotlight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Galeria de Fotos */
+.doctor-media-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.doctor-main-card {
+  position: relative;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(21, 48, 62, 0.16);
+  height: 400px;
+  background-color: #0C1B24;
+}
+
+.doctor-main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.doctor-main-card:hover .doctor-main-photo {
+  transform: scale(1.03);
+}
+
+.doctor-credential-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  background: rgba(12, 27, 36, 0.90);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.85rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.doc-badge-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.doc-badge-crm {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #D8B296;
+  letter-spacing: 0.05em;
+  background: rgba(216, 178, 150, 0.15);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(216, 178, 150, 0.3);
+}
+
+.doctor-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+}
+
+.doctor-sub-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  height: 175px;
+  box-shadow: 0 8px 24px rgba(21, 48, 62, 0.12);
+  background-color: #0C1B24;
+}
+
+.doctor-sub-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.doctor-sub-card:hover .doctor-sub-photo {
+  transform: scale(1.05);
+}
+
+.doctor-sub-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 0.85rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(12, 27, 36, 0.88) 100%);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Coluna de Conteúdo */
+.doctor-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  background-color: rgba(118, 42, 40, 0.08);
+  border: 1px solid rgba(118, 42, 40, 0.2);
+  color: var(--wine-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.15rem;
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--wine-primary);
+  box-shadow: 0 0 0 3px rgba(118, 42, 40, 0.2);
+}
+
+.doctor-title-highlight {
+  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+  font-weight: 800;
+  color: var(--navy-primary);
+  line-height: 1.3;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.doctor-bio-text {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin-bottom: 1rem;
+}
+
+/* Lista de Sociedades Médicas */
+.doctor-societies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.35rem 0 2rem 0;
+}
+
+.society-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1.25rem;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(21, 48, 62, 0.08);
+  box-shadow: 0 2px 8px rgba(21, 48, 62, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.society-badge-item:hover {
+  border-color: var(--wine-primary);
+  transform: translateX(4px);
+  box-shadow: 0 6px 18px rgba(118, 42, 40, 0.10);
+}
+
+.society-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(118, 42, 40, 0.08);
+  color: var(--wine-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.society-badge-item:hover .society-icon-wrap {
+  background-color: var(--wine-primary);
+  color: #FFFFFF;
+}
+
+.society-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.society-text-wrap strong {
+  font-size: 0.92rem;
+  color: var(--navy-primary);
+  font-weight: 700;
+}
+
+.society-text-wrap span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.doctor-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   DIFERENCIAIS DA CLÍNICA (Legado / Alternativo)
    ========================================================================== */
 
 .differentials-section {
@@ -1841,12 +2168,31 @@ textarea.form-input {
   .mobile-nav-toggle {
     display: flex;
   }
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .hero-fullbleed {
+    min-height: 540px;
+  }
+  .hero-inner-container {
+    padding-top: 4.5rem;
+    padding-bottom: 5.5rem;
+  }
+  .hero-features-bar {
+    padding: 2.5rem 0 1rem 0;
+  }
+  .hero-features-bar .hero-features-grid {
+    margin-top: 0;
   }
   .hero-features-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .about-section {
+    padding: 3.5rem 0 4.5rem 0;
+  }
+  .doctor-spotlight-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+  .doctor-main-card {
+    height: 340px;
   }
   .differentials-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1871,6 +2217,50 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+  .hero-fullbleed {
+    min-height: auto;
+  }
+  .hero-inner-container {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .hero-full-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(12, 27, 36, 0.94) 0%,
+      rgba(12, 27, 36, 0.86) 60%,
+      rgba(12, 27, 36, 0.95) 100%
+    );
+  }
+  .hero-over-title {
+    font-size: 2.15rem;
+  }
+  .hero-features-bar {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--bg-canvas);
+  }
+  .hero-features-bar .hero-features-grid {
+    margin-top: 0;
+  }
+  .about-section {
+    padding: 2.75rem 0 4rem 0;
+  }
+  .doctor-spotlight-section {
+    padding: 3.5rem 0;
+  }
+  .doctor-main-card {
+    height: 300px;
+  }
+  .doctor-sub-card {
+    height: 140px;
+  }
+  .doctor-credential-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 0.75rem 1rem;
+  }
   .header-top-utility {
     padding: 0.4rem 1rem;
     font-size: 0.72rem;
