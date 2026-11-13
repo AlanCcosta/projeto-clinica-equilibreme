@@ -349,18 +349,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 7. SCROLL SPY PARA MENU SUPERIOR (Pílula de Navegação)
+  // 7. SCROLL SPY & EFEITO SCROLLED PARA HEADER CLEAN
   // =========================================================================
+  const siteHeaderEl = document.getElementById('siteHeader');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-sand-pill a');
+  const navLinks = document.querySelectorAll('.header-nav-menu .nav-link, .mobile-nav-link');
 
   window.addEventListener('scroll', () => {
-    let currentId = '';
     const scrollY = window.pageYOffset;
 
+    // Adicionar classe scrolled no header após 20px de rolagem
+    if (siteHeaderEl) {
+      if (scrollY > 20) {
+        siteHeaderEl.classList.add('scrolled');
+      } else {
+        siteHeaderEl.classList.remove('scrolled');
+      }
+    }
+
+    let currentId = '';
     sections.forEach(section => {
       const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 140;
+      const sectionTop = section.offsetTop - 120;
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         currentId = section.getAttribute('id');
       }

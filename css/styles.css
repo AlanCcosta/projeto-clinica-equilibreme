@@ -214,119 +214,271 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   HEADER & FLOATING NAVIGATION (Com a Logo Oficial da Equilibreme)
+   HEADER & NAVIGATION (Design Clean Inspirado na Referência)
+   Barra Superior de Utilidades Escura + Barra Principal Clean & Sofisticada
    ========================================================================== */
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background-color: rgba(248, 250, 252, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(21, 48, 62, 0.10);
+  z-index: 1000;
+  width: 100%;
   transition: all var(--transition-fast);
 }
 
-.header-top-bar {
+/* 1. Barra Superior de Utilidades (Dark Navy / Estilo Referência) */
+.header-top-utility {
+  background-color: #10242F;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 0.76rem;
+  color: #C5D2DB;
+  padding: 0.45rem 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.header-utility-container {
+  max-width: 1320px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 0;
+  gap: 1.5rem;
 }
 
-.brand-logo-wrap {
+.utility-left,
+.utility-right {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1.5rem;
 }
 
-.brand-logo-img {
-  height: 58px;
+.utility-item,
+.utility-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #C5D2DB;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.utility-item svg,
+.utility-link svg {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.utility-link:hover {
+  color: #FFFFFF;
+}
+
+.utility-divider {
+  opacity: 0.35;
+  margin: 0 0.15rem;
+  font-weight: 300;
+}
+
+/* 2. Barra Principal de Navegação (Clean / Warm Porcelain) */
+.header-main-nav {
+  background-color: #FBF7F3;
+  border-bottom: 1px solid rgba(21, 48, 62, 0.08);
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(21, 48, 62, 0.03);
+  transition: all 0.3s ease;
+}
+
+.site-header.scrolled .header-main-nav {
+  box-shadow: 0 4px 20px rgba(21, 48, 62, 0.08);
+  background-color: rgba(251, 247, 243, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-main-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Grupo do Logo */
+.header-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-logo-img {
+  height: 46px;
   width: auto;
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
   transition: transform var(--transition-fast);
 }
 
-.brand-logo-wrap:hover .brand-logo-img {
-  transform: scale(1.03);
+.header-logo-link:hover .header-logo-img {
+  transform: scale(1.02);
 }
 
-.header-contact-actions {
+.header-brand-divider {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(21, 48, 62, 0.18);
+}
+
+.header-tagline {
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.phone-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #FFFFFF;
-  padding: 0.55rem 1.15rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  border: 1px solid rgba(21, 48, 62, 0.16);
-  box-shadow: var(--shadow-sm);
-}
-
-.phone-badge-pill:hover {
-  border-color: var(--wine-primary);
-  color: var(--wine-primary);
-}
-
-/* Sub-Bar: Pílula de Navegação inspirada na Referência, agora em Azul Petróleo */
-.sub-nav-wrapper {
-  padding-bottom: 0.75rem;
-}
-
-.nav-sand-pill {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  background-color: var(--navy-primary);
-  border-radius: var(--radius-pill);
-  padding: 0.35rem 0.5rem;
-  box-shadow: 0 4px 16px rgba(21, 48, 62, 0.28);
 }
 
-.nav-sand-pill ul {
+.tagline-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--navy-primary);
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.tagline-sub {
+  font-size: 0.60rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Links do Menu Central */
+.header-nav-menu {
   display: flex;
-  list-style: none;
   align-items: center;
-  gap: 0.5rem;
+}
+
+.header-nav-menu .nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.75rem;
   margin: 0;
   padding: 0;
 }
 
-.nav-sand-pill a {
-  display: block;
-  padding: 0.45rem 1.4rem;
+.header-nav-menu .nav-link {
   font-size: 0.92rem;
+  font-weight: 500;
+  color: #1E2E38;
+  text-decoration: none;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.header-nav-menu .nav-link:hover {
+  color: var(--wine-primary);
+}
+
+.header-nav-menu .nav-link.active {
+  color: var(--wine-primary);
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  border-radius: var(--radius-pill);
-  transition: all var(--transition-fast);
 }
 
-.nav-sand-pill a:hover,
-.nav-sand-pill a.active {
+.header-nav-menu .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
   background-color: var(--wine-primary);
-  color: #FFFFFF;
-  transform: translateY(-1px);
+  transition: width 0.25s ease;
+  border-radius: 2px;
 }
 
-/* Mobile Menu Toggle */
+.header-nav-menu .nav-link.active::after,
+.header-nav-menu .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Grupo de Ações (Instagram Redondo + Botão Pílula Quente) */
+.header-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.action-circle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(21, 48, 62, 0.16);
+  background: #FFFFFF;
+  color: var(--navy-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 4px rgba(21, 48, 62, 0.04);
+}
+
+.action-circle-btn:hover {
+  border-color: var(--wine-primary);
+  color: var(--wine-primary);
+  background-color: rgba(118, 42, 40, 0.04);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(118, 42, 40, 0.12);
+}
+
+.action-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D8B296;
+  color: #2D231E;
+  padding: 0.65rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.90rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(216, 178, 150, 0.28);
+  white-space: nowrap;
+}
+
+.action-pill-btn:hover {
+  background-color: #C89F82;
+  color: #1A130F;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(216, 178, 150, 0.45);
+}
+
+/* Botão Mobile */
 .mobile-nav-toggle {
   display: none;
   background: transparent;
+  border: none;
   color: var(--navy-primary);
-  padding: 0.5rem;
+  padding: 0.4rem;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==========================================================================
@@ -1683,6 +1835,12 @@ textarea.form-input {
    ========================================================================== */
 
 @media (max-width: 1024px) {
+  .header-nav-menu {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1713,14 +1871,24 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
-  .sub-nav-wrapper {
+  .header-top-utility {
+    padding: 0.4rem 1rem;
+    font-size: 0.72rem;
+  }
+  .utility-hours {
     display: none;
   }
-  .mobile-nav-toggle {
-    display: block;
-  }
-  .phone-badge-pill {
+  .header-brand-divider,
+  .header-tagline {
     display: none;
+  }
+  .action-pill-btn {
+    padding: 0.55rem 1.15rem;
+    font-size: 0.84rem;
+  }
+  .action-circle-btn {
+    width: 38px;
+    height: 38px;
   }
   .about-grid {
     grid-template-columns: 1fr;
@@ -1767,5 +1935,19 @@ textarea.form-input {
     right: 1rem;
     left: 1rem;
     width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-top-utility .utility-left {
+    max-width: 60%;
+    overflow: hidden;
+  }
+  .header-top-utility .utility-left span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .action-circle-btn {
+    display: none;
   }
 }
