@@ -1952,6 +1952,7 @@ textarea.form-input {
   box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
   cursor: pointer;
   transition: all var(--transition-smooth);
+  text-decoration: none;
 }
 
 .whatsapp-floating-btn:hover {
@@ -1975,18 +1976,7 @@ textarea.form-input {
 }
 
 .whatsapp-popover {
-  position: fixed;
-  bottom: 6.5rem;
-  right: 2rem;
-  width: 310px;
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-  z-index: 998;
-  padding: 1.25rem;
-  border: 1px solid var(--navy-border);
-  display: none;
-  animation: popIn 0.3s ease forwards;
+  display: none !important;
 }
 
 .whatsapp-popover.active {

@@ -255,49 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. FLOATING WHATSAPP & POPOVER
+  // 4. FLOATING WHATSAPP BUTTON (CLIQUE DIRETO)
   // =========================================================================
   const waFloatBtn = document.getElementById('whatsappFloatingBtn');
-  const waPopover = document.getElementById('whatsappPopover');
-  const waPopoverClose = document.getElementById('whatsappPopoverClose');
-  const waQuickSend = document.getElementById('whatsappQuickSend');
-
-  if (waFloatBtn && waPopover) {
+  if (waFloatBtn) {
     waFloatBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      waPopover.classList.toggle('active');
+      // Abre o WhatsApp diretamente se não for tratado nativamente pelo <a>
+      const defaultMsg = 'Olá! Gostaria de tirar dúvidas sobre os atendimentos e valores na Clínica Equilibreme.';
+      const url = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodeURIComponent(defaultMsg)}`;
+      // O link nativo já possui href, garantindo redundância segura
     });
-
-    if (waPopoverClose) {
-      waPopoverClose.addEventListener('click', (e) => {
-        e.stopPropagation();
-        waPopover.classList.remove('active');
-      });
-    }
-
-    if (waQuickSend) {
-      waQuickSend.addEventListener('click', () => {
-        const defaultMsg = 'Olá! Gostaria de tirar dúvidas sobre os atendimentos e valores na Clínica Equilibreme.';
-        const url = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodeURIComponent(defaultMsg)}`;
-        window.open(url, '_blank');
-        waPopover.classList.remove('active');
-      });
-    }
-
-    // Fechar popover ao clicar fora
-    document.addEventListener('click', (e) => {
-      if (!waPopover.contains(e.target) && e.target !== waFloatBtn) {
-        waPopover.classList.remove('active');
-      }
-    });
-
-    // Exibir sutilmente o popover após 6 segundos na página pela primeira vez
-    setTimeout(() => {
-      if (!sessionStorage.getItem('waPopoverShown')) {
-        waPopover.classList.add('active');
-        sessionStorage.setItem('waPopoverShown', 'true');
-      }
-    }, 6000);
   }
 
   // =========================================================================
