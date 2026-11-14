@@ -1091,33 +1091,39 @@ button, input, textarea, select {
   bottom: 1.25rem;
   left: 1.25rem;
   right: 1.25rem;
-  background: rgba(12, 27, 36, 0.90);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 0.85rem 1.25rem;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(12, 27, 36, 0.48);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  padding: 0.75rem 1.15rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #FFFFFF;
+  transition: all var(--transition-smooth);
 }
 
 .doc-badge-title {
   font-size: 1.02rem;
   font-weight: 700;
   color: #FFFFFF;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .doc-badge-crm {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: #D8B296;
+  color: #F8DFC8;
   letter-spacing: 0.05em;
-  background: rgba(216, 178, 150, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   padding: 0.25rem 0.65rem;
   border-radius: 9999px;
-  border: 1px solid rgba(216, 178, 150, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .doctor-sub-grid {
