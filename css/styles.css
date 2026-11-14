@@ -1938,6 +1938,25 @@ textarea.form-input {
   color: #7A93A4;
 }
 
+.brand-ac-digital {
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  transition: opacity var(--transition-fast);
+}
+
+.brand-ac-digital .ac-white {
+  color: #FFFFFF;
+}
+
+.brand-ac-digital .ac-blue {
+  color: #38BDF8;
+}
+
+.brand-ac-digital:hover {
+  opacity: 0.9;
+}
+
 /* ==========================================================================
    FLOATING WHATSAPP & MODAL
    ========================================================================== */
